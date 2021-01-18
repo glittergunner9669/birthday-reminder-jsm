@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { FaAngleDoubleRight } from 'react-icons/fa'
 const url = 'https://course-api.com/react-tabs-project'
 function App() {
-  const [loading, setLoading] = useState(true); // loading state
-  const [jobs, setJobs] = useState([]); // empty array
+  const [loading, setLoading] = useState(true);
+  const [jobs, setJobs] = useState([]);
   const [value, setValue] = useState(0);
 
   const fetchJobs = async () => {
@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
     fetchJobs();
-  }, []); // invoke the function fetchJobs(), [] run useEffect on initial render
+  }, []);
 
   if (loading) {
     return (
@@ -24,7 +24,7 @@ function App() {
       </section>
     );
   }
-  const {company,dates,duties,title} = jobs[value];
+  const { company, dates, duties, title } = jobs[value];
   return (
     <section className='section'>
       <div className='title'>
@@ -65,4 +65,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
