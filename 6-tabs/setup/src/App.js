@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { FaAngleDoubleRight } from 'react-icons/fa'
 const url = 'https://course-api.com/react-tabs-project'
 function App() {
-  const [loading, setLoading] = useState(true); // loading state
-  const [jobs, setJobs] = useState([]); // empty array
+  const [loading, setLoading] = useState(true);
+  const [jobs, setJobs] = useState([]);
   const [value, setValue] = useState(0);
 
   const fetchJobs = async () => {
@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
     fetchJobs();
-  }, []); // invoke the function fetchJobs(), [] run useEffect on initial render
+  }, []);
 
   if (loading) {
     return (
@@ -24,7 +24,7 @@ function App() {
       </section>
     );
   }
-  const {company,dates,duties,title} = jobs[value];
+  const { company, dates, duties, title } = jobs[value];
   return (
     <section className='section'>
       <div className='title'>
@@ -36,10 +36,8 @@ function App() {
         <div className='btn-container'>
           {jobs.map((item, index) => {
             return (
-              <button
-                key={item.id}
-                onClick={() => setValue(index)}
-                className={`job-btn ${index === value && 'active-btn'}`}
+              <button key={item.id} onClick={() => setValue(index)} 
+              className={`job-btn ${index === value && 'active-btn'}`}
               >
                 {item.company}
               </button>
@@ -54,7 +52,7 @@ function App() {
           {duties.map((duty, index) => {
             return (
               <div key={index} className='job-desc'>
-                <FaAngleDoubleRight className='job-icon'></FaAngleDoubleRight>
+                <FaAngleDoubleRight />
                 <p>{duty}</p>
               </div>
             );
@@ -65,4 +63,6 @@ function App() {
   );
 }
 
-export default App
+export default App;
+
+// id, order, title, dates, duties, company

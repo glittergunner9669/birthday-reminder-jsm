@@ -13,6 +13,6 @@ const Question = ({ title, info }) => {
       {showInfo && <p>{info}</p>}
     </article>
   );
-};
+};  
 
 export default Question;
