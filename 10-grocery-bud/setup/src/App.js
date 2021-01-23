@@ -98,4 +98,6 @@ function App() {
   );
 }
 
-export default App
+export default App;
+
+// Project 10: Grocery Bud
