@@ -69,4 +69,4 @@ export default App;
 
 // id, image, name, title, quote
 
-// Slider
+// Project 7: Slider
