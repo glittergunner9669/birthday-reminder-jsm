@@ -44,3 +44,5 @@ function App() {
 }
 
 export default App;
+
+// Project 8: Lorem Ipsum Generator
