@@ -12,7 +12,7 @@ function App() {
     e.preventDefault();
     try {
       let colors = new Values(color).all(10);
-      setList(colors)
+      setList(colors);
       console.log(colors);
     } catch (error) {
       setError(true);
@@ -39,12 +39,20 @@ function App() {
       </section>
       <section className='colors'>
         {list.map((color, index) => {
-          
-          return <SingleColor key={index} {...color} index={index} hexColor={color.hex} />;
+          return (
+            <SingleColor
+              key={index}
+              {...color}
+              index={index}
+              hexColor={color.hex}
+            />
+          );
         })}
       </section>
     </>
   );
 }
 
-export default App
+export default App;
+
+// Project 9: Color Shades Generator
