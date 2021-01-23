@@ -68,3 +68,5 @@ function App() {
 export default App;
 
 // id, image, name, title, quote
+
+// Slider
